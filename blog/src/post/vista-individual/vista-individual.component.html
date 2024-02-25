@@ -1,0 +1,21 @@
+<!-- <p>vista-individual works!</p> -->
+<div class="col-md-12 d-flex justify-content-center align-items-center mt-5">
+    <div class="col-md-5 border border-1 rounded p-5">
+        <h3>View Post</h3>
+        <div>
+          <p><strong>ID:</strong></p>
+          <p>{{ post?.id }}</p>
+        </div>
+        <div>
+          <p><strong>Title:</strong></p>
+          <p>{{ post?.title }}</p>
+        </div>
+        <div>
+          <p><strong>Body:</strong></p>
+          <p>{{ post?.body }}</p>
+        </div>
+        <a [routerLink]="['/']" class="btn btn-primary mt-3">
+            Back
+        </a>        
+    </div>
+</div>

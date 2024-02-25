@@ -1,0 +1,31 @@
+<!-- <p>listado works!</p> -->
+<div>
+    <a routerLink="creacion" class="btn btn-success my-3 ms-2nn">Create New Post</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Por cada post-->
+            <tr *ngFor="let post of posts; let i = index">
+                <td scope="row">{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.body}}</td>
+                <td>
+                    <div class="d-flex flex-row">
+                        <a [routerLink]="['vista', post.id]" class="btn btn-info">View</a>
+                        <!-- <a [routerLink]="['actualizacion', post.id]"></a> -->
+                        <a [routerLink]="['actualizacion', post.id]" class="btn btn-primary ms-2">Edit</a>
+                        <a (click)="deletePost(post)" class="btn btn-danger ms-2">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
